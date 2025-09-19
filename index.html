@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이버 스토킹 대화화면</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #b2c7d9;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .chat-header {
+            background-color: #3c5a9a;
+            color: white;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .chat-header .back-btn {
+            margin-right: 15px;
+            font-size: 18px;
+        }
+        
+        .chat-header .profile {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+        
+        .chat-header .profile-pic {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #666;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .chat-header .name {
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .chat-container {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: linear-gradient(180deg, #b2c7d9 0%, #8fb4d3 100%);
+        }
+        
+        .message {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-end;
+        }
+        
+        .message.sent {
+            justify-content: flex-end;
+        }
+        
+        .message.received {
+            justify-content: flex-start;
+        }
+        
+        .message-bubble {
+            max-width: 70%;
+            padding: 10px 14px;
+            border-radius: 18px;
+            word-wrap: break-word;
+        }
+        
+        .message.sent .message-bubble {
+            background-color: #ffe400;
+            color: #000;
+        }
+        
+        .message.received .message-bubble {
+            background-color: #ffffff;
+            color: #000;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .message-time {
+            font-size: 11px;
+            color: #666;
+            margin: 0 5px;
+            align-self: flex-end;
+            margin-bottom: 2px;
+        }
+        
+        .date-divider {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .date-divider span {
+            background-color: rgba(255,255,255,0.8);
+            padding: 6px 12px;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-header">
+        <span class="back-btn">‹</span>
+        <div class="profile">
+            <div class="profile-pic">김</div>
+            <div class="name">김민수</div>
+        </div>
+    </div>
+    
+    <div class="chat-container">
+        <div class="date-divider">
+            <span>8월 15일 목요일</span>
+        </div>
+        
+        <div class="message received">
+            <div class="message-bubble">
+                안녕! 오랜만이야
+            </div>
+            <div class="message-time">오후 2:30</div>
+        </div>
+        
+        <div class="message sent">
+            <div class="message-time">오후 3:15</div>
+            <div class="message-bubble">
+                누구세요?
+            </div>
+        </div>
+        
+        <div class="message received">
+            <div class="message-bubble">
+                나야 나! 대학교 때 같은 과였잖아
+            </div>
+            <div class="message-time">오후 3:16</div>
+        </div>
+        
+        <div class="message received">
+            <div class="message-bubble">
+                뭐해?
+            </div>
+            <div class="message-time">오후 3:17</div>
+        </div>
+        
+        <div class="message sent">
+            <div class="message-time">오후 4:00</div>
+            <div class="message-bubble">
+                연락하지 말아주세요
+            </div>
+        </div>
+        
+        <div class="date-divider">
+            <span>8월 16일 금요일</span>
+        </div>
+        
+        <div class="message received">
+            <div class="message-bubble">
+                왜 그래? 그냥 친구로 지내자
+            </div>
+            <div class="message-time">오전 7:30</div>
+        </div>
+        
+        <div class="message received">
+            <div class="message-bubble">
+                보고 싶다
+            </div>
+            <div class="message-time">오전 9:15</div>
+        </div>
+        
+        <div class="message received">
+            <div class="message-bubble">
+                너 지금 어디야?
+            </div>
+            <div class="message-time">오후 6:45</div>
+        </div>
+        
+        <div class="message sent">
+            <div class="message-time">오후 7:00</div>
+            <div class="message-bubble">
+                제발 그만해주세요
+            </div>
+        </div>
+        
+        <div class="date-divider">
+            <span>8월 17일 토요일</span>
+        </div>
+        
+        <div class="message received">
+            <div class="message-bubble">
+                너 회사 OO빌딩이지?
+            </div>
+            <div class="message-time">오전 8:30</div>
+        </div>
+        
+        <div class="message received">
+            <div class="message-bubble">
+                회사 앞에서 기다릴게
+            </div>
+            <div class="message-time">오전 8:35</div>
+        </div>
+        
+        <div class="message sent">
+            <div class="message-time">오전 8:40</div>
+            <div class="message-bubble">
+                그만해... 제발...
+            </div>
+        </div>
+        
+        <div class="message received">
+            <div class="message-bubble">
+                왜 안 나와? 지금 1층에 있어
+            </div>
+            <div class="message-time">오전 9:00</div>
+        </div>
+        
+        <div class="message received">
+            <div class="message-bubble">
+                나를 무시하면 안 돼
+            </div>
+            <div class="message-time">오전 9:10</div>
+        </div>
+        
+        <div class="message sent">
+            <div class="message-time">오전 9:20</div>
+            <div class="message-bubble">
+                신고할 거예요
+            </div>
+        </div>
+        
+        <div class="message received">
+            <div class="message-bubble">
+                그냥 좋아해서 그러는 건데
+            </div>
+            <div class="message-time">오전 9:22</div>
+        </div>
+        
+        <div class="message received">
+            <div class="message-bubble">
+                너 없으면 안 돼
+            </div>
+            <div class="message-time">오전 9:25</div>
+        </div>
+    </div>
+</body>
+</html>
