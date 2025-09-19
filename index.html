@@ -112,6 +112,45 @@
             padding: 6px 12px;
             border-radius: 15px;
         }
+        
+        .chat-input {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .input-container {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border-radius: 25px;
+            padding: 8px 15px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        #messageInput {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 8px 0;
+            font-size: 14px;
+            background: transparent;
+        }
+        
+        #sendBtn {
+            background-color: #ffe400;
+            border: none;
+            border-radius: 15px;
+            padding: 8px 15px;
+            margin-left: 10px;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        #sendBtn:hover {
+            background-color: #ffdd00;
+        }
     </style>
 </head>
 <body>
@@ -130,7 +169,7 @@
         
         <div class="message received">
             <div class="message-bubble">
-                안녕! 오랜만이야
+                안녕!
             </div>
             <div class="message-time">오후 2:30</div>
         </div>
@@ -144,7 +183,7 @@
         
         <div class="message received">
             <div class="message-bubble">
-                나야 나! 대학교 때 같은 과였잖아
+                나야!
             </div>
             <div class="message-time">오후 3:16</div>
         </div>
@@ -159,56 +198,34 @@
         <div class="message sent">
             <div class="message-time">오후 4:00</div>
             <div class="message-bubble">
-                연락하지 말아주세요
+                연락 마세요
             </div>
-        </div>
-        
-        <div class="date-divider">
-            <span>8월 16일 금요일</span>
-        </div>
-        
-        <div class="message received">
-            <div class="message-bubble">
-                왜 그래? 그냥 친구로 지내자
-            </div>
-            <div class="message-time">오전 7:30</div>
         </div>
         
         <div class="message received">
             <div class="message-bubble">
                 보고 싶다
             </div>
-            <div class="message-time">오전 9:15</div>
-        </div>
-        
-        <div class="message received">
-            <div class="message-bubble">
-                너 지금 어디야?
-            </div>
             <div class="message-time">오후 6:45</div>
         </div>
         
-        <div class="message sent">
+        <div class="message received">
+            <div class="message-bubble">
+                어디야?
+            </div>
             <div class="message-time">오후 7:00</div>
-            <div class="message-bubble">
-                제발 그만해주세요
-            </div>
         </div>
         
-        <div class="date-divider">
-            <span>8월 17일 토요일</span>
+        <div class="message sent">
+            <div class="message-time">오후 7:05</div>
+            <div class="message-bubble">
+                그만해...
+            </div>
         </div>
         
         <div class="message received">
             <div class="message-bubble">
-                너 회사 OO빌딩이지?
-            </div>
-            <div class="message-time">오전 8:30</div>
-        </div>
-        
-        <div class="message received">
-            <div class="message-bubble">
-                회사 앞에서 기다릴게
+                회사 앞에 있어
             </div>
             <div class="message-time">오전 8:35</div>
         </div>
@@ -216,43 +233,15 @@
         <div class="message sent">
             <div class="message-time">오전 8:40</div>
             <div class="message-bubble">
-                그만해... 제발...
+                제발...
             </div>
         </div>
-        
-        <div class="message received">
-            <div class="message-bubble">
-                왜 안 나와? 지금 1층에 있어
-            </div>
-            <div class="message-time">오전 9:00</div>
-        </div>
-        
-        <div class="message received">
-            <div class="message-bubble">
-                나를 무시하면 안 돼
-            </div>
-            <div class="message-time">오전 9:10</div>
-        </div>
-        
-        <div class="message sent">
-            <div class="message-time">오전 9:20</div>
-            <div class="message-bubble">
-                신고할 거예요
-            </div>
-        </div>
-        
-        <div class="message received">
-            <div class="message-bubble">
-                그냥 좋아해서 그러는 건데
-            </div>
-            <div class="message-time">오전 9:22</div>
-        </div>
-        
-        <div class="message received">
-            <div class="message-bubble">
-                너 없으면 안 돼
-            </div>
-            <div class="message-time">오전 9:25</div>
+    </div>
+    
+    <div class="chat-input">
+        <div class="input-container">
+            <input type="text" placeholder="메시지를 입력하세요." id="messageInput">
+            <button id="sendBtn">전송</button>
         </div>
     </div>
 </body>
