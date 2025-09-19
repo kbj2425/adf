@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>사이버 스토킹 대화화면</title>
+    <title>사이버 스토킹 단체채팅방</title>
     <style>
         body {
             margin: 0;
@@ -35,10 +35,10 @@
             align-items: center;
         }
         
-        .chat-header .profile-pic {
+        .chat-header .group-icon {
             width: 40px;
             height: 40px;
-            border-radius: 50%;
+            border-radius: 8px;
             background-color: #666;
             margin-right: 12px;
             display: flex;
@@ -46,11 +46,18 @@
             justify-content: center;
             color: white;
             font-weight: bold;
+            font-size: 12px;
         }
         
         .chat-header .name {
             font-weight: bold;
             font-size: 16px;
+        }
+        
+        .chat-header .member-count {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-left: 5px;
         }
         
         .chat-container {
@@ -63,7 +70,7 @@
         .message {
             margin-bottom: 10px;
             display: flex;
-            align-items: flex-end;
+            align-items: flex-start;
         }
         
         .message.sent {
@@ -74,8 +81,41 @@
             justify-content: flex-start;
         }
         
+        .message.system {
+            justify-content: center;
+            margin: 15px 0;
+        }
+        
+        .message.system .system-text {
+            background-color: rgba(255,255,255,0.8);
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .sender-info {
+            min-width: 80px;
+            margin-right: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .sender-name {
+            font-size: 11px;
+            color: #666;
+            margin-bottom: 2px;
+            font-weight: bold;
+        }
+        
+        .message-content {
+            display: flex;
+            flex-direction: column;
+            max-width: 60%;
+        }
+        
         .message-bubble {
-            max-width: 70%;
             padding: 10px 14px;
             border-radius: 18px;
             word-wrap: break-word;
@@ -95,9 +135,12 @@
         .message-time {
             font-size: 11px;
             color: #666;
-            margin: 0 5px;
+            margin-top: 2px;
+            align-self: flex-start;
+        }
+        
+        .message.sent .message-time {
             align-self: flex-end;
-            margin-bottom: 2px;
         }
         
         .date-divider {
@@ -157,83 +200,125 @@
     <div class="chat-header">
         <span class="back-btn">‹</span>
         <div class="profile">
-            <div class="profile-pic">김</div>
-            <div class="name">김민수</div>
+            <div class="group-icon">그룹</div>
+            <div>
+                <div class="name">우리반 친구들</div>
+                <div class="member-count">7명</div>
+            </div>
         </div>
     </div>
     
     <div class="chat-container">
         <div class="date-divider">
-            <span>8월 15일 목요일</span>
+            <span>9월 15일 일요일</span>
+        </div>
+        
+        <div class="message system">
+            <div class="system-text">김지훈님이 채팅방을 개설했습니다</div>
         </div>
         
         <div class="message received">
-            <div class="message-bubble">
-                안녕!
+            <div class="sender-info">
+                <div class="sender-name">김지훈</div>
             </div>
-            <div class="message-time">오후 2:30</div>
+            <div class="message-content">
+                <div class="message-bubble">반가워</div>
+                <div class="message-time">오후 2:30</div>
+            </div>
+        </div>
+        
+        <div class="message received">
+            <div class="sender-info">
+                <div class="sender-name">박민수</div>
+            </div>
+            <div class="message-content">
+                <div class="message-bubble">안녕!</div>
+                <div class="message-time">오후 2:35</div>
+            </div>
         </div>
         
         <div class="message sent">
-            <div class="message-time">오후 3:15</div>
-            <div class="message-bubble">
-                누구세요?
+            <div class="message-content">
+                <div class="message-bubble">안녕하세요</div>
+                <div class="message-time">오후 2:40</div>
+            </div>
+        </div>
+        
+        <div class="message system">
+            <div class="system-text">김지훈님이 채팅방 나가기를 제한했습니다</div>
+        </div>
+        
+        <div class="message received">
+            <div class="sender-info">
+                <div class="sender-name">김지훈</div>
+            </div>
+            <div class="message-content">
+                <div class="message-bubble">이제 못 나가</div>
+                <div class="message-time">오후 3:00</div>
             </div>
         </div>
         
         <div class="message received">
-            <div class="message-bubble">
-                나야!
+            <div class="sender-info">
+                <div class="sender-name">박민수</div>
             </div>
-            <div class="message-time">오후 3:16</div>
-        </div>
-        
-        <div class="message received">
-            <div class="message-bubble">
-                뭐해?
+            <div class="message-content">
+                <div class="message-bubble">ㅋㅋㅋ 재밌겠다</div>
+                <div class="message-time">오후 3:05</div>
             </div>
-            <div class="message-time">오후 3:17</div>
         </div>
         
         <div class="message sent">
-            <div class="message-time">오후 4:00</div>
-            <div class="message-bubble">
-                연락 마세요
+            <div class="message-content">
+                <div class="message-bubble">나가고 싶어요</div>
+                <div class="message-time">오후 3:10</div>
             </div>
         </div>
         
         <div class="message received">
-            <div class="message-bubble">
-                보고 싶다
+            <div class="sender-info">
+                <div class="sender-name">김지훈</div>
             </div>
-            <div class="message-time">오후 6:45</div>
+            <div class="message-content">
+                <div class="message-bubble">안 돼</div>
+                <div class="message-time">오후 3:15</div>
+            </div>
         </div>
         
         <div class="message received">
-            <div class="message-bubble">
-                어디야?
+            <div class="sender-info">
+                <div class="sender-name">이수진</div>
             </div>
-            <div class="message-time">오후 7:00</div>
+            <div class="message-content">
+                <div class="message-bubble">계속 여기 있어</div>
+                <div class="message-time">오후 3:20</div>
+            </div>
         </div>
         
         <div class="message sent">
-            <div class="message-time">오후 7:05</div>
-            <div class="message-bubble">
-                그만해...
+            <div class="message-content">
+                <div class="message-bubble">제발...</div>
+                <div class="message-time">오후 3:25</div>
             </div>
         </div>
         
         <div class="message received">
-            <div class="message-bubble">
-                회사 앞에 있어
+            <div class="sender-info">
+                <div class="sender-name">김지훈</div>
             </div>
-            <div class="message-time">오전 8:35</div>
+            <div class="message-content">
+                <div class="message-bubble">우리랑 놀자</div>
+                <div class="message-time">오후 4:00</div>
+            </div>
         </div>
         
-        <div class="message sent">
-            <div class="message-time">오전 8:40</div>
-            <div class="message-bubble">
-                제발...
+        <div class="message received">
+            <div class="sender-info">
+                <div class="sender-name">박민수</div>
+            </div>
+            <div class="message-content">
+                <div class="message-bubble">도망 못 가</div>
+                <div class="message-time">오후 4:05</div>
             </div>
         </div>
     </div>
